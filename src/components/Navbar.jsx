@@ -16,6 +16,7 @@ export default function Navbar() {
         SoftNova Academy Form
       </h1>
 
+      
       {/* RIGHT EMPTY (for balance) */}
       <div></div>
     </nav>
