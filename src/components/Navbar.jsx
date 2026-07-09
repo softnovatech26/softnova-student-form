@@ -10,7 +10,7 @@ export default function Navbar() {
           className="w-10 h-10 rounded-full"
         />
       </div>
-
+  {/* CENTER TITLE */}
       {/* CENTER TITLE */}
       <h1 className="text-xl font-bold text-blue-600">
         SoftNova Academy Form
