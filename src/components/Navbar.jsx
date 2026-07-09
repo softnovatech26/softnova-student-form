@@ -22,7 +22,7 @@ const Navbar = () => {
           SoftNova <span className="text-[#e14d43]">Academy</span>
         </h1>
       </div>
-<<<<<<< HEAD
+
 
       {/* 2. Middle: Navigation Links */}
       <div className="hidden md:flex items-center space-x-8 text-[15px] font-medium tracking-wide">
@@ -42,7 +42,7 @@ const Navbar = () => {
         
       </div>
 
-=======
+
   {/* CENTER TITLE */}
       {/* CENTER TITLE */}
       <h1 className="text-xl font-bold text-blue-600">
@@ -52,7 +52,7 @@ const Navbar = () => {
       
       {/* RIGHT EMPTY (for balance) */}
       <div></div>
->>>>>>> 61e2e9b94a4d54dfd107d2b51e0e8d0253a5b321
+
     </nav>
   );
 };
