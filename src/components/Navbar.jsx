@@ -1,86 +1,55 @@
-import React, { useState } from 'react';
-import { Search } from 'lucide-react'; 
+// import React from "react";
 
 const Navbar = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-
   return (
-  //   <nav className="bg-[#0f141c] text-white px-6 py-4 flex items-center justify-between shadow-md">
-      
-  //     {/* 1. Left Side: Logo and Brand Name */}
-  //     <div className="flex items-center space-x-3 cursor-pointer">
-      
-  //       <div className="w-12 h-12 rounded-full border-2 border-gray-600 bg-white flex items-center justify-center overflow-hidden">
-  //         <img 
-  //           src="/SoftNova Logo.png" 
-  //           alt="SoftNova Logo" 
-  //           className="w-10 h-10 object-contain"
-  //         />
-  //       </div>
-      
-  //       <h1 className="text-2xl font-bold tracking-wide">
-  //         SoftNova <span className="text-[#e14d43]">Academy</span>
-  //       </h1>
-  //     </div>
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/80 border-b border-red-600/20 shadow-lg shadow-red-600/5">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
+        {/* Left */}
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 rounded-full bg-white border-2 border-red-600 flex items-center justify-center overflow-hidden shadow-lg shadow-red-600/20">
+            <img
+              src="/SoftNova Logo.png"
+              alt="SoftNova Logo"
+              className="w-11 h-11 object-contain"
+            />
+          </div>
 
-  //     {/* 2. Middle: Navigation Links */}
-  //     <div className="hidden md:flex items-center space-x-8 text-[15px] font-medium tracking-wide">
-  //       <a href="#home" className="hover:text-gray-300 transition-colors">Home</a>
-  //       <a href="#courses" className="hover:text-gray-300 transition-colors">Courses</a>
-  //       <a href="#trainers" className="hover:text-gray-300 transition-colors">Trainers</a>
-  //       <a href="#projects" className="hover:text-gray-300 transition-colors">Projects</a>
-  //       <a href="#about" className="hover:text-gray-300 transition-colors">About</a>
-  //       <a href="#contact" className="hover:text-gray-300 transition-colors">Contact</a>
-  //     </div>
+          <div>
+            <h1 className="text-2xl font-bold tracking-wide text-white">
+              SoftNova
+              <span className="text-red-500"> Academy</span>
+            </h1>
 
-  //     {/* 3. Right Side: Search Bar */}
-  //     <div className="relative w-64">
-  //       <span className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-          
-  //       </span>
-        
-  //     </div>
-
-
-  // {/* CENTER TITLE */}
-  //     {/* CENTER TITLE */}
-  //     <h1 className="text-xl font-bold text-blue-600">
-  //       SoftNova Academy Form
-  //     </h1>
-
-      
-  //     {/* RIGHT EMPTY (for balance) */}
-  //     <div></div>
-
-  //   </nav>
-
-
-
-   <nav className="relative bg-black text-white px-6 py-4 flex items-center justify-between shadow-md border-b border-[#e14d43]/30">
-
-      {/* Left Side: Logo and Brand Name */}
-      <div className="flex items-center space-x-3 cursor-pointer">
-        <div className="w-12 h-12 rounded-full border-2 border-gray-700 bg-white flex items-center justify-center overflow-hidden shrink-0">
-          <img src="/SoftNova Logo.png" alt="SoftNova Logo" className="w-10 h-10 object-contain" />
+            <p className="text-xs text-gray-400 tracking-wider uppercase">
+              Learn • Build • Grow
+            </p>
+          </div>
         </div>
 
-        <h1 className="text-2xl font-bold tracking-wide whitespace-nowrap">
-          SoftNova <span className="text-[#e14d43]">Academy</span>
-        </h1>
+        {/* Center */}
+        <div className="hidden lg:block">
+          <h2 className="text-2xl font-semibold text-white tracking-wide">
+            Student Registration
+            <span className="text-red-500"> Portal</span>
+          </h2>
+        </div>
+
+        {/* Right */}
+  <div className="hidden md:flex items-center">
+  <div className="group cursor-pointer flex items-center gap-2 px-5 py-2 rounded-full border border-red-600/40 bg-red-600/10 hover:bg-red-600 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-red-600/30">
+
+    <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse group-hover:bg-white"></span>
+
+    <span className="text-red-400 group-hover:text-white text-sm font-semibold transition-colors duration-300">
+      Admissions Open
+    </span>
+
+  </div>
+</div>
+
       </div>
-
-      {/* Center: Page Title */}
-      <h2 className="absolute left-1/2 -translate-x-1/2 text-xl md:text-3xl font-semibold tracking-wide text-white">
-        Student <span className="text-[#e14d43]">Form</span> 
-      </h2>
-
-      {/* Right side spacer for balance (keeps center title truly centered) */}
-      {/* <div className="w-12"></div> */}
-
-    </nav>
-
-
+    </header>
   );
 };
 

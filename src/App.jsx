@@ -1,77 +1,167 @@
-// App.jsx
 import Navbar from "./components/Navbar";
 import Register from "./pages/Register";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 export default function App() {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen">
+    <div className="min-h-screen bg-black text-white">
+
       <Navbar />
 
       <SignedOut>
-        <div className="min-h-[calc(100vh-30px)] flex items-center justify-center px-4 relative overflow-hidden">
-          {/* Animated Background - Red Glow */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-600/5 rounded-full blur-3xl"></div>
-            <div className="absolute -top-20 -right-20 w-80 h-80 bg-red-600/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-red-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
+        <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden px-6">
+
+          {/* Background Glow */}
+          <div className="absolute inset-0">
+
+            <div className="absolute top-20 left-20 w-72 h-72 bg-red-600/20 blur-[120px] rounded-full animate-pulse"></div>
+
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-red-600/10 blur-[150px] rounded-full"></div>
+
           </div>
 
-          <div className="relative z-10 bg-[#111111] border border-[#1f1f1f] p-10 rounded-2xl shadow-2xl max-w-md w-full animate-fadeInUp hover:border-red-500/30 transition-all duration-300">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-red-600/10 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-red-600/20 hover:border-red-600/40 transition-all duration-300 hover:shadow-xl hover:shadow-red-600/10">
-                <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                </svg>
-              </div>
-              <h2 className="text-3xl font-bold text-white mb-3">
-                Welcome!
-              </h2>
-              <p className="text-gray-500 mb-8 text-lg">
-                Please login to access the registration form
+
+          <div className="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
+
+
+            {/* Left Content */}
+
+            <div className="space-y-6">
+
+              <p className="inline-block px-4 py-2 rounded-full bg-red-600/10 border border-red-600/30 text-red-400 text-sm">
+                🚀 Admissions Open 2026
               </p>
 
-              <SignInButton mode="modal">
-                <button className="group relative w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-600/20 overflow-hidden">
-                  <span className="relative z-10 flex items-center justify-center gap-3">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
-                    </svg>
-                    Login / Sign Up
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                </button>
-              </SignInButton>
+
+              <h1 className="text-5xl font-bold leading-tight">
+
+                Build Your Future With
+
+                <span className="text-red-500">
+                  {" "}SoftNova Academy
+                </span>
+
+              </h1>
+
+
+              <p className="text-gray-400 text-lg leading-relaxed max-w-lg">
+
+                Learn modern technologies from industry focused courses.
+                Start your journey with web development, Python, AI and mobile
+                application development.
+
+              </p>
+
+
+              <div className="grid grid-cols-2 gap-4 pt-4">
+
+                <div className="bg-[#111] border border-white/10 rounded-xl p-4 hover:border-red-500 transition">
+
+                  <h3 className="text-2xl font-bold text-red-500">
+                    6+
+                  </h3>
+
+                  <p className="text-gray-400 text-sm">
+                    Professional Courses
+                  </p>
+
+                </div>
+
+
+                <div className="bg-[#111] border border-white/10 rounded-xl p-4 hover:border-red-500 transition">
+
+                  <h3 className="text-2xl font-bold text-red-500">
+                    100%
+                  </h3>
+
+                  <p className="text-gray-400 text-sm">
+                    Practical Learning
+                  </p>
+
+                </div>
+
+              </div>
+
+
             </div>
+
+
+
+            {/* Login Card */}
+
+            <div className="bg-[#111] border border-white/10 rounded-3xl p-8 shadow-2xl hover:border-red-500/40 transition">
+
+
+              <div className="text-center">
+
+
+                <div className="w-20 h-20 mx-auto rounded-2xl bg-red-600/10 border border-red-600/30 flex items-center justify-center mb-6">
+
+                  <span className="text-4xl">
+                    🎓
+                  </span>
+
+                </div>
+
+
+                <h2 className="text-3xl font-bold mb-3">
+                  Student Portal
+                </h2>
+
+
+                <p className="text-gray-400 mb-8">
+                  Login to continue your registration process
+                </p>
+
+
+
+                <SignInButton mode="modal">
+
+                  <button className="w-full py-4 rounded-xl bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 font-semibold text-lg transition hover:scale-[1.02] shadow-lg shadow-red-600/20">
+
+                    Login / Create Account
+
+                  </button>
+
+                </SignInButton>
+
+
+              </div>
+
+
+            </div>
+
+
           </div>
 
-          <style>{`
-            @keyframes fadeInUp {
-              from {
-                opacity: 0;
-                transform: translateY(20px) scale(0.95);
-              }
-              to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-              }
-            }
-            
-            .animate-fadeInUp {
-              animation: fadeInUp 0.5s ease-out forwards;
-            }
-          `}</style>
-        </div>
+
+        </section>
+
+
       </SignedOut>
 
+
+
       <SignedIn>
-        <div className="p-4 flex justify-end max-w-7xl mx-auto">
-          <div className="bg-[#111111] border border-[#1f1f1f] px-3 py-2 rounded-xl hover:border-red-500/30 transition-all duration-300">
+
+        <div className="flex justify-end p-5">
+
+          <div className="bg-[#111] border border-red-600/30 rounded-xl p-2">
+
             <UserButton afterSignOutUrl="/" />
+
           </div>
+
         </div>
+
+
         <Register />
+
+
       </SignedIn>
+
+
     </div>
   );
 }
