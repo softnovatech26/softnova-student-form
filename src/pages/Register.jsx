@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useUser } from "@clerk/clerk-react";
 
@@ -19,16 +20,18 @@ export default function Register() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
 
-  const handleChange = (e) => {
+ const handleChange = (e) => {
 
-    if (e.target.type === "file") {
+  if (e.target.type === "file") {
 
-      setFormData({
-        ...formData,
-        paymentScreenshot: e.target.files[0],
-      });
+    console.log("Selected File:", e.target.files[0]);
 
-    } else {
+    setFormData({
+      ...formData,
+      paymentScreenshot: e.target.files[0],
+    });
+
+  } else  {
 
       setFormData({
         ...formData,
@@ -40,40 +43,55 @@ export default function Register() {
   };
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
 
     e.preventDefault();
 
     setIsSubmitting(true);
 
 
-    const registrationData = {
+   const data = new FormData();
 
-      ...formData,
+data.append("fullName", formData.fullName);
+data.append("email", formData.email);
+data.append("phone", formData.phone);
+data.append("city", formData.city);
+data.append("province", formData.province);
+data.append("course", formData.course);
 
-      clerkUserId: user.id,
-
-      clerkName: user.fullName,
-
-      clerkEmail: user.emailAddresses[0].emailAddress,
-
-    };
-
-
-    console.log("Registration Data:", registrationData);
-
+data.append("clerkUserId", user.id);
+data.append("clerkName", user.fullName);
+data.append("clerkEmail", user.emailAddresses[0].emailAddress);
+data.append("paymentScreenshot", formData.paymentScreenshot);
 
 
-    setTimeout(() => {
+try {
 
-      alert("Registration Submitted Successfully!");
+  const response = await axios.post(
+    "http://localhost:5000/api/register",
+    data,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
 
-      setIsSubmitting(false);
+  alert(response.data.message);
 
-    },1500);
+} catch (error) {
 
+  console.log(error);
 
-  };
+  alert("Registration failed");
+
+} finally {
+
+  setIsSubmitting(false);
+
+}
+
+};
 
 
 
@@ -520,7 +538,7 @@ export default function Register() {
               <input
 
                 type="file"
-
+                  name="paymentScreenshot"
                 accept="image/*"
 
                 onChange={handleChange}
