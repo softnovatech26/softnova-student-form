@@ -443,7 +443,7 @@ try {
 
                 <span className="text-white font-semibold">
 
-                  SoftNova Academy
+                  Haseeb Ul Hassan Founder SoftNova Academy
 
                 </span>
 
@@ -479,7 +479,7 @@ try {
 
                 <span className="text-white font-mono">
 
-                  03XX-XXXXXXX
+                  9957-0111679963
 
                 </span>
 
