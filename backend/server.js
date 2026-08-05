@@ -1,10 +1,7 @@
 /* eslint-env node */
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import registerRoutes from "./routes/registerRoutes.js";
-
-dotenv.config();
 
 const app = express();
 
