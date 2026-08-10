@@ -5,10 +5,7 @@ import registerRoutes from "./routes/registerRoutes.js";
 
 const app = express();
 // Enable CORS for the frontend application
-app.use(cors({
-  origin: "http://localhost:3000",
-  credentials: true,
-}));
+
 app.use(cors({
   origin: "https://softnova-student-form.vercel.app",
   credentials: true,
