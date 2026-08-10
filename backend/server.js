@@ -5,7 +5,10 @@ import registerRoutes from "./routes/registerRoutes.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://softnova-student-form.vercel.app",
+  credentials: true,
+}));
 app.use(express.json());
 app.use("/api", registerRoutes);
 app.get("/", (req, res) => {
