@@ -374,125 +374,77 @@ try {
 
 
 
-
-          {/* Fee Card */}
-
-
-          <div className="mt-10 bg-gradient-to-br from-red-600/20 to-black border border-red-500/30 rounded-2xl p-6">
-
-
-            <div className="flex items-center gap-3 mb-5">
-
-              <div className="w-12 h-12 rounded-xl bg-red-600/20 flex items-center justify-center text-2xl">
-
-                💳
-
-              </div>
-
-
-              <div>
-
-                <h3 className="text-xl font-bold text-white">
-
-                  Registration Fee
-
-                </h3>
-
-
-                <p className="text-gray-400 text-sm">
-
-                  Complete payment before submission
-
-                </p>
-
-              </div>
-
-
-            </div>
-
-
-
-
-            <div className="space-y-3 text-gray-300">
-
-
-              <div className="flex justify-between border-b border-white/10 pb-3">
-
-                <span>
-                  Registration Fee
-                </span>
-
-
-                <span className="text-2xl font-bold text-red-500">
-
-                  1000 PKR
-
-                </span>
-
-
-              </div>
-
-
-
-              <div className="flex justify-between">
-
-                <span>
-                  Account Title
-                </span>
-
-
-                <span className="text-white font-semibold">
-
-                  Haseeb Ul Hassan Founder SoftNova Academy
-
-                </span>
-
-
-              </div>
-
-
-
-              <div className="flex justify-between">
-
-                <span>
-                  Bank Name
-                </span>
-
-
-                <span className="text-white font-semibold">
-
-                  Meezan Bank
-
-                </span>
-
-
-              </div>
-
-
-
-              <div className="flex justify-between">
-
-                <span>
-                  Account Number
-                </span>
-
-
-                <span className="text-white font-mono">
-
-                  9957-0111679963
-
-                </span>
-
-
-              </div>
-
-
-            </div>
-
-
-          </div>
-
-
+{/* Fee Card */}
+
+<div className="mt-10 bg-gradient-to-br from-red-600/20 to-black border border-red-500/30 rounded-2xl p-6">
+
+  <div className="flex items-center gap-3 mb-5">
+    <div className="w-12 h-12 rounded-xl bg-red-600/20 flex items-center justify-center text-2xl">
+      💳
+    </div>
+
+    <div>
+      <h3 className="text-xl font-bold text-white">
+        Registration Fee
+      </h3>
+
+      <p className="text-gray-400 text-sm">
+        Complete payment before submission
+      </p>
+    </div>
+  </div>
+
+  <div className="space-y-4 text-gray-300">
+
+    {/* Registration Fee */}
+    <div className="flex flex-col sm:flex-row sm:justify-between gap-2 border-b border-white/10 pb-4">
+      <span className="font-medium">
+        Registration Fee
+      </span>
+
+      <span className="text-2xl font-bold text-red-500 text-left sm:text-right">
+        1000 PKR
+      </span>
+    </div>
+
+    {/* Account Title */}
+    <div className="flex flex-col sm:flex-row sm:justify-between gap-2 border-b border-white/10 pb-4">
+      <span className="font-medium">
+        Account Title
+      </span>
+
+      <span className="text-white font-semibold text-left sm:text-right leading-relaxed">
+        Haseeb Ul Hassan
+        <br />
+        Founder SoftNova Academy
+      </span>
+    </div>
+
+    {/* Bank Name */}
+    <div className="flex flex-col sm:flex-row sm:justify-between gap-2 border-b border-white/10 pb-4">
+      <span className="font-medium">
+        Bank Name
+      </span>
+
+      <span className="text-white font-semibold text-left sm:text-right">
+        Meezan Bank
+      </span>
+    </div>
+
+    {/* Account Number */}
+    <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
+      <span className="font-medium">
+        Account Number
+      </span>
+
+      <span className="text-white font-mono break-all text-left sm:text-right">
+        9957-0111679963
+      </span>
+    </div>
+
+  </div>
+
+</div>
 
 
 
