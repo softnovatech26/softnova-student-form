@@ -30,11 +30,11 @@ const Navbar = () => {
         {/* Center */}
         <div className="hidden lg:block">
           <h2 className="text-2xl font-semibold text-white tracking-wide">
-            Student Registration Form
+            Student Registration
             <span className="text-red-500"> Portal</span>
           </h2>
         </div>
-
+ra
         {/* Right */}
   <div className="hidden md:flex items-center">
   <div className="group cursor-pointer flex items-center gap-2 px-5 py-2 rounded-full border border-red-600/40 bg-red-600/10 hover:bg-red-600 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-red-600/30">

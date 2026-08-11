@@ -4,7 +4,7 @@ import upload from "../middleware/upload.js";
 
 const router = express.Router();
 
-// Student Registration Route
+// Student Registration
 router.post(
   "/register",
   upload.single("paymentScreenshot"),
