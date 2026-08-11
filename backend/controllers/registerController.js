@@ -1,35 +1,20 @@
 /* eslint-env node */
-
 import nodemailer from "nodemailer";
+
 
 export const registerStudent = async (req, res) => {
   try {
+
     const {
       fullName,
       email,
       phone,
       city,
       province,
-      course,
+      course
     } = req.body;
 
-    // Check required fields
-    if (!fullName || !email || !phone || !city || !province || !course) {
-      return res.status(400).json({
-        success: false,
-        message: "Please fill all required fields.",
-      });
-    }
 
-    // Check payment screenshot
-    if (!req.file) {
-      return res.status(400).json({
-        success: false,
-        message: "Payment screenshot is required.",
-      });
-    }
-
-    // Gmail transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -38,92 +23,90 @@ export const registerStudent = async (req, res) => {
       },
     });
 
-    // Verify email configuration
-    await transporter.verify();
 
-    // Admin email
-    const adminMail = {
-      from: process.env.EMAIL_USER,
-      to: "softnovatech.pk@gmail.com",
+   // Admin Email
+const adminMail = {
+  from: process.env.EMAIL_USER,
+  to: "softnovatech.pk@gmail.com",
+  subject: "New Student Registration - SoftNova Academy",
 
-      subject: "New Student Registration - SoftNova Academy",
+  html: `
+    <h2>New Student Registration</h2>
 
-      html: `
-        <h2>New Student Registration</h2>
+    <p><b>Name:</b> ${fullName}</p>
+    <p><b>Email:</b> ${email}</p>
+    <p><b>Phone:</b> ${phone}</p>
+    <p><b>City:</b> ${city}</p>
+    <p><b>Province:</b> ${province}</p>
+    <p><b>Course:</b> ${course}</p>
 
-        <p><b>Name:</b> ${fullName}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        <p><b>City:</b> ${city}</p>
-        <p><b>Province:</b> ${province}</p>
-        <p><b>Course:</b> ${course}</p>
+    <br/>
 
-        <br/>
+    <p><b>Payment Screenshot:</b> Attached Below</p>
 
-        <p><b>Payment Screenshot:</b> Attached Below</p>
+    <br/>
 
-        <br/>
+    <p>SoftNova Student Registration Portal</p>
+  `,
 
-        <p>SoftNova Student Registration Portal</p>
-      `,
-
-      attachments: [
+  attachments: req.file
+    ? [
         {
           filename: req.file.originalname,
-          content: req.file.buffer,
-          contentType: req.file.mimetype,
+          path: req.file.path,
         },
-      ],
-    };
+      ]
+    : [],
+};
 
-    // Student confirmation email
-    const studentMail = {
-      from: process.env.EMAIL_USER,
-      to: email,
 
-      subject: "Registration Received - SoftNova Academy",
+// Student Confirmation Email
+const studentMail = {
+  from: process.env.EMAIL_USER,
+  to: email,
+  subject: "Registration Received - SoftNova Academy",
 
-      html: `
-        <h2>Dear ${fullName},</h2>
+  html: `
+    <h2>Dear ${fullName},</h2>
 
-        <p>
-          Your registration form has been successfully received by
-          <b>SoftNova Academy</b>.
-        </p>
+    <p>
+      Your registration form has been successfully received by
+      <b>SoftNova Academy</b>.
+    </p>
 
-        <p>
-          Our team will review your details and contact you soon.
-        </p>
+    <p>
+      Our team will review your details and contact you soon.
+    </p>
 
-        <br/>
+    <br/>
 
-        <p>
-          Thank you for choosing SoftNova Academy.
-        </p>
+    <p>
+      Thank you for choosing SoftNova Academy.
+    </p>
 
-        <br/>
+    <br/>
 
-        <b>SoftNova Team</b>
-      `,
-    };
-
-    // Send admin email
+    <b>SoftNova Team</b>
+  `,
+};
+    // Send both emails
     await transporter.sendMail(adminMail);
-
-    // Send student confirmation
     await transporter.sendMail(studentMail);
 
-    return res.status(200).json({
+
+    res.status(200).json({
       success: true,
       message: "Registration completed successfully",
     });
 
-  } catch (error) {
-    console.error("REGISTRATION ERROR:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: error.message || "Registration failed",
-    });
+  } catch (error) {
+
+    console.log(error);
+
+  res.status(500).json({
+  success:false,
+  message:error.message
+});
   }
 };
