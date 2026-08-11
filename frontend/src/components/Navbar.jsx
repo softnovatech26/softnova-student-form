@@ -30,7 +30,7 @@ const Navbar = () => {
         {/* Center */}
         <div className="hidden lg:block">
           <h2 className="text-2xl font-semibold text-white tracking-wide">
-            Student Registration
+            Student Registration Form
             <span className="text-red-500"> Portal</span>
           </h2>
         </div>
