@@ -68,7 +68,7 @@ data.append("paymentScreenshot", formData.paymentScreenshot);
 try {
 
   const response = await axios.post(
-    `${process.env.VITE_API_URL}/api/register`,
+    '${process.env.VITE_API_URL}/api/register',
     data,
     {
       headers: {
