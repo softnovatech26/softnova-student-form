@@ -68,14 +68,14 @@ data.append("paymentScreenshot", formData.paymentScreenshot);
 try {
 
   const response = await axios.post(
-    '${process.env.VITE_API_URL}/api/register',
-    data,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    }
-  );
+  `${import.meta.env.VITE_API_URL}/api/register`,
+  data,
+  {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  }
+);
 
   alert(response.data.message);
 
